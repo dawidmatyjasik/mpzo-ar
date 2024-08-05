@@ -1,0 +1,6 @@
+.eslintrc.js
+react-native.config.js
+metro.config.js
+jest.config.js
+babel.config.js
+commitlint.config.js

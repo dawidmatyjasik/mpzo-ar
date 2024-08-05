@@ -1,27 +1,19 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import {
-  ViroARScene,
-  ViroARSceneNavigator,
-  ViroText,
-} from "@reactvision/react-viro";
+
+import { ViroARScene, ViroARSceneNavigator, ViroText } from "@reactvision/react-viro";
 
 const HelloWorldSceneAR = () => {
   return (
     <ViroARScene>
-      <ViroText
-        text={"Hello World!"}
-        scale={[0.5, 0.5, 0.5]}
-        position={[0, 0, -1]}
-        style={styles.helloWorldTextStyle}
-      />
+      <ViroText text="Hello World!" scale={[0.5, 0.5, 0.5]} position={[0, 0, -1]} style={styles.helloWorldTextStyle} />
     </ViroARScene>
   );
 };
 
 const App = () => (
   <ViroARSceneNavigator
-    autofocus={true}
+    autofocus
     initialScene={{
       scene: HelloWorldSceneAR,
     }}
