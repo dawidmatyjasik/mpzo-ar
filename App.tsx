@@ -1,35 +1,24 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 
-import { ViroARScene, ViroARSceneNavigator, ViroText } from "@reactvision/react-viro";
+import { DefaultTheme, PaperProvider } from "react-native-paper";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-const HelloWorldSceneAR = () => {
-  return (
-    <ViroARScene>
-      <ViroText text="Hello World!" scale={[0.5, 0.5, 0.5]} position={[0, 0, -1]} style={styles.helloWorldTextStyle} />
-    </ViroARScene>
-  );
+import RootNavigation from "features/navigation/components/rootNavigation";
+import customTheme from "theme/theme.json";
+
+import type { MD3Theme } from "react-native-paper";
+
+const theme: MD3Theme = {
+  ...DefaultTheme,
+  ...customTheme,
 };
 
 const App = () => (
-  <ViroARSceneNavigator
-    autofocus
-    initialScene={{
-      scene: HelloWorldSceneAR,
-    }}
-    style={styles.f1}
-  />
+  <PaperProvider theme={theme}>
+    <SafeAreaProvider>
+      <RootNavigation />
+    </SafeAreaProvider>
+  </PaperProvider>
 );
-
-const styles = StyleSheet.create({
-  f1: { flex: 1 },
-  helloWorldTextStyle: {
-    fontFamily: "Arial",
-    fontSize: 30,
-    color: "#ffffff",
-    textAlignVertical: "center",
-    textAlign: "center",
-  },
-});
 
 export default App;
