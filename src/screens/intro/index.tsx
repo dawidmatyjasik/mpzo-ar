@@ -1,11 +1,10 @@
 import type { FC } from "react";
 import React, { useCallback } from "react";
 import type { ListRenderItem } from "react-native";
-import { Animated, FlatList, ImageBackground, StyleSheet } from "react-native";
+import { Animated, FlatList, StyleSheet } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import backgroundIntro from "assets/png/intro-background.png";
 import Intro from "features/intro/components/intro";
 import IntroActions from "features/intro/components/introActions";
 import IntroPagination from "features/intro/components/introPagination";
@@ -26,28 +25,26 @@ const IntroScreen: FC<IntroProps> = () => {
   }, []);
 
   return (
-    <ImageBackground source={backgroundIntro} style={styles.introContainer}>
-      <SafeAreaView style={styles.introContainer}>
-        <FlatList
-          data={slides}
-          renderItem={renderItem}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          pagingEnabled
-          bounces={false}
-          onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
-            useNativeDriver: false,
-          })}
-          scrollEventThrottle={32}
-          onViewableItemsChanged={viewableItemsChanged}
-          viewabilityConfig={viewConfig}
-          ref={slidesRef}
-          keyExtractor={({ name }) => name}
-        />
-        <IntroPagination scrollX={scrollX} />
-        <IntroActions handleNext={handleNext} handleBack={handleBack} isFirst={isFirst} />
-      </SafeAreaView>
-    </ImageBackground>
+    <SafeAreaView style={styles.introContainer}>
+      <FlatList
+        data={slides}
+        renderItem={renderItem}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        pagingEnabled
+        bounces={false}
+        onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
+          useNativeDriver: false,
+        })}
+        scrollEventThrottle={32}
+        onViewableItemsChanged={viewableItemsChanged}
+        viewabilityConfig={viewConfig}
+        ref={slidesRef}
+        keyExtractor={({ name }) => name}
+      />
+      <IntroPagination scrollX={scrollX} />
+      <IntroActions handleNext={handleNext} handleBack={handleBack} isFirst={isFirst} />
+    </SafeAreaView>
   );
 };
 
