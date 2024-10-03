@@ -5,14 +5,15 @@ import { Button } from "react-native-paper";
 
 interface IntroActionsProps {
   handleNext: () => void;
+  handleBack: () => void;
   isFirst: boolean;
 }
 
-const IntroActions = ({ isFirst, handleNext }: IntroActionsProps) => {
+const IntroActions = ({ isFirst, handleNext, handleBack }: IntroActionsProps) => {
   return (
     <View style={styles.actions}>
       {!isFirst && (
-        <Button mode="outlined" onPress={handleNext} style={styles.button}>
+        <Button mode="outlined" onPress={handleBack} style={styles.button}>
           Wstecz
         </Button>
       )}
