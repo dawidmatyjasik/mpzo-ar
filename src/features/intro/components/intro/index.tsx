@@ -1,16 +1,16 @@
 import React, { ReactNode } from "react";
 
+import Step from "features/intro/components/step/Step";
 import Step1 from "features/intro/components/step1";
-import Step2 from "features/intro/components/step2";
 
 import type { SlideName, SlideProps } from "features/intro/types";
 
-const Intro = ({ name }: SlideProps) => {
+const Intro = ({ name, description, image, title }: SlideProps) => {
   const componentsMap: Record<SlideName, ReactNode> = {
-    Step1: <Step1 />,
-    Step2: <Step2 />,
-    Step3: <Step1 />,
-    Step4: <Step1 />,
+    Step1: <Step1 title={title} image={image} description={description} />,
+    Step2: <Step title={title} image={image} description={description} />,
+    Step3: <Step title={title} image={image} description={description} />,
+    Step4: <Step title={title} image={image} description={description} />,
   };
 
   const Component = componentsMap[name];

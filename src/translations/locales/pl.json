@@ -4,5 +4,23 @@
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "hint": "Jeśli jesteś osobą z dysfunkcjami, możesz skorzystać z ułatwień dostępnych w Twoim urządzeniu",
     "next": "Dalej"
+  },
+  "intro": {
+    "step1": {
+      "title": "Czym jest ścieżka Superbohaterów?",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "step2": {
+      "title": "Czym jest ścieżka Superbohaterów?",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "step3": {
+      "title": "Czym jest ścieżka Superbohaterów?",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    "step4": {
+      "title": "Czym jest ścieżka Superbohaterów?",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
   }
 }

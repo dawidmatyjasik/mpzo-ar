@@ -6,7 +6,7 @@ import { Text } from "react-native-paper";
 
 import { SlideProps } from "features/intro/types";
 
-const Step1 = ({ description, image, title }: Omit<SlideProps, "name">) => {
+const Step = ({ description, image, title }: Omit<SlideProps, "name">) => {
   const { t } = useTranslation();
   return (
     <View style={styles.container}>
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Step1;
+export default Step;
