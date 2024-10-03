@@ -10,6 +10,7 @@ interface IntroActionsProps {
 }
 
 const IntroActions = ({ isFirst, handleNext, handleBack }: IntroActionsProps) => {
+  const styles = getStyles(isFirst);
   return (
     <View style={styles.actions}>
       {!isFirst && (
@@ -26,16 +27,18 @@ const IntroActions = ({ isFirst, handleNext, handleBack }: IntroActionsProps) =>
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-const styles = StyleSheet.create({
-  actions: {
-    flexDirection: "row",
-    gap: 10,
-    width: SCREEN_WIDTH,
-    paddingHorizontal: 24,
-  },
-  button: {
-    width: "100%",
-  },
-});
+const getStyles = (isFirst: boolean) => {
+  return StyleSheet.create({
+    actions: {
+      flexDirection: "row",
+      gap: 10,
+      width: SCREEN_WIDTH,
+      paddingHorizontal: 24,
+    },
+    button: {
+      width: isFirst ? "100%" : "50%",
+    },
+  });
+};
 
 export default IntroActions;
