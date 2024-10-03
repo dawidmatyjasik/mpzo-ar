@@ -1,7 +1,7 @@
 import React from "react";
-import { View, StyleSheet, Dimensions, Image } from "react-native";
+import { View, StyleSheet, Dimensions, Image, Text as NativeText } from "react-native";
 
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Text } from "react-native-paper";
 
 import { SlideProps } from "features/intro/types";
@@ -13,7 +13,11 @@ const Step = ({ description, image, title }: Omit<SlideProps, "name">) => {
       <Image source={image} />
       <View style={styles.content}>
         <Text variant="headlineLarge" style={styles.text}>
-          {t(title)}
+          <Trans
+            defaults={title}
+            values={{ AR: "AR" }}
+            components={{ highlight: <NativeText style={styles.highlight} /> }}
+          />
         </Text>
         <Text variant="bodyLarge" style={styles.text}>
           {t(description)}
@@ -39,6 +43,9 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
+  },
+  highlight: {
+    color: "red",
   },
 });
 
