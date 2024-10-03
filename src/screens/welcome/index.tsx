@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { StyleSheet, View } from "react-native";
 
+import { useTranslation } from "react-i18next";
 import { Button, Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -9,23 +10,23 @@ import { IntroStackScreenProps } from "features/navigation/components/introNavig
 type WelcomeScreenProps = IntroStackScreenProps<"WelcomeScreen">;
 
 const WelcomeScreen: FC<WelcomeScreenProps> = ({ navigation }) => {
+  const { t } = useTranslation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.textWrapper}>
         <View style={styles.textContainer}>
-          <Text variant="headlineLarge">Dzień dobry</Text>
+          <Text variant="headlineLarge">{t("welcome.title")}</Text>
           <Text variant="bodyLarge" style={styles.textBody}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text
-            of the printing and typesetting industry.
+            {t("welcome.hint")}
           </Text>
         </View>
       </View>
 
       <Text variant="bodySmall" style={styles.textInfo}>
-        Jeśli jesteś osobą z dysfunkcjami, możesz skorzystać z ułatwień dostępnych w Twoim urządzeniu
+        {t("welcome.hint")}
       </Text>
       <Button mode="contained" onPress={() => navigation.push("IntroScreen")}>
-        Dalej
+        {t("welcome.next")}
       </Button>
     </SafeAreaView>
   );
@@ -41,10 +42,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   textContainer: {
-    position: "absolute",
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
+    textAlign: "center",
     gap: 16,
     top: "50%",
     transform: [{ translateY: -50 }],
