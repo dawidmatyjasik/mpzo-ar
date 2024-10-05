@@ -11,7 +11,6 @@ interface IntroActionsProps {
 
 const IntroActions = ({ isFirst, handleNext, handleBack }: IntroActionsProps) => {
   const styles = getStyles(isFirst);
-
   return (
     <View style={styles.actions}>
       {!isFirst && (
