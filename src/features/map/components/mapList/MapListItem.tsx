@@ -12,7 +12,7 @@ const MapListItem = () => {
       <List.Item
         title="First Item"
         description="Item description"
-        left={(props) => <Avatar.Text {...props} label="A" size={40} color="white" />}
+        left={(props) => <Avatar.Text label="A" size={40} color="white" style={[props.style, styles.avatar]} />}
         right={(props) => <List.Icon {...props} icon="chevron-right" />}
       />
     </View>
