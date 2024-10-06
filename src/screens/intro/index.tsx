@@ -19,8 +19,8 @@ export type IntroProps = IntroStackScreenProps<"IntroScreen">;
 const IntroScreen: FC<IntroProps> = () => {
   const { handleBack, handleNext, isFirst, scrollX, slidesRef, viewConfig, viewableItemsChanged } = useIntro();
 
-  const renderItem: ListRenderItem<SlideProps> = useCallback(({ item: { name, description, image, title } }) => {
-    return <Intro name={name} description={description} image={image} title={title} />;
+  const renderItem: ListRenderItem<SlideProps> = useCallback(({ item: { name, description, image, title, mp3 } }) => {
+    return <Intro name={name} description={description} image={image} title={title} mp3={mp3} />;
   }, []);
 
   return (

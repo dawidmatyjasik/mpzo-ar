@@ -42,7 +42,7 @@ export const useIntro = () => {
 
   useEffect(() => {
     const handlePause = async () => {
-      await TrackPlayer.pause();
+      await TrackPlayer.stop();
     };
 
     handlePause();

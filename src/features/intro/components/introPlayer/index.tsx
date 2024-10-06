@@ -6,14 +6,19 @@ import { MD3Colors } from "react-native-paper/lib/typescript/types";
 import IoniconsPlay from "react-native-vector-icons/Ionicons";
 
 import { useIntroPlayer } from "features/intro/hooks/useIntroPlayer";
+import { SlideTrack } from "features/intro/types";
 import { useAppTheme } from "features/theme/hooks";
 
-const IntroPlayer = () => {
+interface IntroPlayerProps {
+  mp3: SlideTrack;
+}
+
+const IntroPlayer = ({ mp3 }: IntroPlayerProps) => {
   const { colors } = useAppTheme();
 
   const styles = getStyles(colors);
 
-  const { handlePause, handlePlay, isPaused, isReady } = useIntroPlayer();
+  const { handlePause, handlePlay, isPaused, isReady } = useIntroPlayer({ mp3 });
 
   return (
     <TouchableOpacity
