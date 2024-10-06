@@ -1,8 +1,9 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Animated } from "react-native";
 import type { FlatList, ViewToken } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
+import TrackPlayer from "react-native-track-player";
 
 import { slides } from "features/intro/consts";
 import { moveToBottomTab, moveToScannerScreen } from "features/navigation/utils";
@@ -38,6 +39,14 @@ export const useIntro = () => {
       slidesRef.current?.scrollToIndex({ index: currentIndex - 1 });
     }
   };
+
+  useEffect(() => {
+    const handlePause = async () => {
+      await TrackPlayer.pause();
+    };
+
+    handlePause();
+  }, [currentIndex]);
 
   return {
     slidesRef,

@@ -1,19 +1,32 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 
+import { ActivityIndicator } from "react-native-paper";
 import { MD3Colors } from "react-native-paper/lib/typescript/types";
 import IoniconsPlay from "react-native-vector-icons/Ionicons";
 
+import { useIntroPlayer } from "features/intro/hooks/useIntroPlayer";
 import { useAppTheme } from "features/theme/hooks";
 
 const IntroPlayer = () => {
   const { colors } = useAppTheme();
+
   const styles = getStyles(colors);
 
+  const { handlePause, handlePlay, isPaused, isReady } = useIntroPlayer();
+
   return (
-    <TouchableOpacity style={styles.player}>
+    <TouchableOpacity
+      style={styles.player}
+      onPress={isReady ? handlePlay : handlePause}
+      hitSlop={10}
+      disabled={!isPaused && !isReady}>
       <View style={styles.playerWrapper}>
-        <IoniconsPlay name="play" size={28} color={colors.primary} style={styles.playerIcon} />
+        {isPaused && <IoniconsPlay name="pause" size={28} color={colors.primary} style={styles.playerIcon} />}
+
+        {isReady && <IoniconsPlay name="play" size={28} color={colors.primary} style={styles.playerIcon} />}
+
+        {!isPaused && !isReady && <ActivityIndicator color={colors.primary} style={styles.playerIcon} />}
       </View>
     </TouchableOpacity>
   );
