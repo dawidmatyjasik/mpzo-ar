@@ -10,7 +10,7 @@ import type { MD3Theme } from "react-native-paper";
 
 export const theme: MD3Theme = {
   ...DefaultTheme,
-  ...customTheme,
+  colors: customTheme.colors,
 };
 
 const App = () => (
