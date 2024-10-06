@@ -3,7 +3,8 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { BottomTabParamList, TabScreenProps } from "features/navigation/components/bottomTabNavigation";
-import EmptyScreen from "screens/empty";
+import MapScreen from "screens/map";
+import { mapScreenOptions } from "screens/map/utils";
 
 import type { CompositeScreenProps } from "@react-navigation/native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -22,7 +23,7 @@ const MapStack = createNativeStackNavigator<MapStackParamList>();
 const MapNavigation = () => {
   return (
     <MapStack.Navigator initialRouteName="MapScreen">
-      <MapStack.Screen name="MapScreen" component={EmptyScreen} />
+      <MapStack.Screen name="MapScreen" component={MapScreen} options={mapScreenOptions} />
     </MapStack.Navigator>
   );
 };
