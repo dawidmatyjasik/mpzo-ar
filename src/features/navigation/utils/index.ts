@@ -4,12 +4,11 @@ export const moveToBottomTab = CommonActions.reset({
   index: 0,
   routes: [
     {
-      name: "MainStack",
+      name: "BottonTabNavigation",
       state: {
         routes: [
           {
-            name: "BottomTab",
-            params: { screen: "Accounts" },
+            name: "MapNavigation",
           },
         ],
       },
