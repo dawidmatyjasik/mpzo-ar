@@ -22,5 +22,10 @@
       "title": "Poruszaj się zgodnie z kierunkiem ścieżki!",
       "description": "Zapewniamy najlepsze wrażenia wizualne, gdy korzystasz z aplikacji zgodnie z zaleceniami. Jakość doświadczeń może być różna, gdy nie poruszasz się zgodnie z kierunkiem ścieżki superbohaterów."
     }
+  },
+  "bottomNavigation": {
+    "map": "Mapa",
+    "path": "Ścieżka",
+    "settings": "Ustawienia"
   }
 }
