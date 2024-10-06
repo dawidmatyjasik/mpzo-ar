@@ -17,11 +17,17 @@ import type { SlideProps } from "features/intro/types";
 export type IntroProps = IntroStackScreenProps<"IntroScreen">;
 
 const IntroScreen: FC<IntroProps> = () => {
-  const { handleBack, handleNext, isFirst, scrollX, slidesRef, viewConfig, viewableItemsChanged } = useIntro();
+  const { handleBack, handleNext, isFirst, scrollX, slidesRef, viewConfig, viewableItemsChanged, handleSkip } =
+    useIntro();
 
-  const renderItem: ListRenderItem<SlideProps> = useCallback(({ item: { name, description, image, title, mp3 } }) => {
-    return <Intro name={name} description={description} image={image} title={title} mp3={mp3} />;
-  }, []);
+  const renderItem: ListRenderItem<SlideProps> = useCallback(
+    ({ item: { name, description, image, title, mp3 } }) => {
+      return (
+        <Intro name={name} description={description} image={image} title={title} mp3={mp3} handleSkip={handleSkip} />
+      );
+    },
+    [handleSkip]
+  );
 
   return (
     <SafeAreaView style={styles.introContainer}>

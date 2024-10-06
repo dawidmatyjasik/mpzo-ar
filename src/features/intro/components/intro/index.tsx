@@ -1,20 +1,15 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 import Step from "features/intro/components/step/Step";
 
-import type { SlideName, SlideProps } from "features/intro/types";
+import type { SlideProps } from "features/intro/types";
 
-const Intro = ({ name, description, image, title, mp3 }: SlideProps) => {
-  const componentsMap: Record<SlideName, ReactNode> = {
-    Step1: <Step title={title} image={image} description={description} mp3={mp3} />,
-    Step2: <Step title={title} image={image} description={description} mp3={mp3} />,
-    Step3: <Step title={title} image={image} description={description} mp3={mp3} />,
-    Step4: <Step title={title} image={image} description={description} mp3={mp3} />,
-  };
+interface IntroProps extends SlideProps {
+  handleSkip: () => void;
+}
 
-  const Component = componentsMap[name];
-
-  return Component;
+const Intro = ({ description, image, title, mp3, handleSkip }: IntroProps) => {
+  return <Step title={title} image={image} description={description} mp3={mp3} handleSkip={handleSkip} />;
 };
 
 export default Intro;
