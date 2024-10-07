@@ -47,6 +47,7 @@ const BottomTabNavigation = () => {
       inactiveColor={colors.onSurface}
       activeColor={colors.secondary}
       screenOptions={navigationOptions}
+      barStyle={styles.navigatorBar}
       activeIndicatorStyle={styles.navigator}>
       <TabStack.Screen name="MapNavigation" component={MapNavigation} options={mapScreenOptions} />
       <TabStack.Screen name="Path" component={EmptyScreen} options={pathScreenOptions} />
@@ -60,6 +61,11 @@ const getStyles = (colors: MD3Colors) =>
     navigator: {
       backgroundColor: colors.secondary,
       color: "white",
+    },
+    navigatorBar: {
+      borderTopWidth: 1,
+      borderColor: "#e2e2e2", //TODO: update color
+      backgroundColor: "white",
     },
   });
 
