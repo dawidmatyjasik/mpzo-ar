@@ -28,7 +28,7 @@ const MapList = () => {
 const getStyles = () =>
   StyleSheet.create({
     list: {
-      padding: 24,
+      paddingVertical: 32,
     },
   });
 

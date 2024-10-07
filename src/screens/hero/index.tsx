@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Image, ScrollView, StyleSheet } from "react-native";
+import { Image, ScrollView, StyleSheet, View } from "react-native";
 
 import { Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,10 +14,12 @@ const HeroScreen: FC<HeroScreenProps> = ({ route }) => {
   const styles = getStyles();
   return (
     <SafeAreaView style={styles.container} edges={["right", "left"]}>
-      <Image source={MapImage} style={styles.mapImage as any} />
-      <ScrollView contentContainerStyle={styles.content}>
-        <Text variant="headlineLarge">{name}</Text>
-        <Text variant="bodyLarge">{description}</Text>
+      <ScrollView>
+        <Image source={MapImage} style={styles.mapImage as any} />
+        <View style={styles.content}>
+          <Text variant="headlineLarge">{name}</Text>
+          <Text variant="bodyLarge">{description}</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
