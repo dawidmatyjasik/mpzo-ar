@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 import { type CompositeScreenProps, type NavigatorScreenParams } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "react-native-paper";
 import { MD3Colors } from "react-native-paper/lib/typescript/types";
 import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
 
@@ -12,6 +11,7 @@ import { getMapScreenOptions } from "features/navigation/components/mapNavigatio
 import { RootScreenProps, RootStackParamList } from "features/navigation/components/rootNavigation";
 import SettingsNavigation, { SettingsStackParamList } from "features/navigation/components/settingsNavigation";
 import { getSettingsScreenOptions } from "features/navigation/components/settingsNavigation/utils";
+import { useAppTheme } from "features/theme/hooks";
 import EmptyScreen from "screens/empty";
 import { getPathScreenOptions } from "screens/path/utils";
 
@@ -31,7 +31,7 @@ export type TabScreenProps<T extends keyof BottomTabParamList> = CompositeScreen
 const TabStack = createMaterialBottomTabNavigator<BottomTabParamList>();
 
 const BottomTabNavigation = () => {
-  const { colors } = useTheme();
+  const { colors } = useAppTheme();
   const { t } = useTranslation();
 
   const styles = getStyles(colors);

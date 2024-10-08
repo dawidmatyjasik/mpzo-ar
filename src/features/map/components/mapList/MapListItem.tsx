@@ -2,10 +2,11 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { Avatar, List, useTheme } from "react-native-paper";
+import { Avatar, List } from "react-native-paper";
 import { MD3Colors } from "react-native-paper/lib/typescript/types";
 
 import { MapStackParamList } from "features/navigation/components/mapNavigation";
+import { useAppTheme } from "features/theme/hooks";
 
 interface MapListItemProps {
   name: string;
@@ -13,7 +14,7 @@ interface MapListItemProps {
 }
 
 const MapListItem = ({ name, description }: MapListItemProps) => {
-  const { colors } = useTheme();
+  const { colors } = useAppTheme();
   const styles = getStyles(colors);
 
   const navigation = useNavigation<NavigationProp<MapStackParamList>>();
