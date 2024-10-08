@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { View, Text } from "react-native";
 
-const PathScreen = () => {
+import { TabScreenProps } from "features/navigation/components/bottomTabNavigation";
+
+type PathScreenProps = TabScreenProps<"Path">;
+
+const PathScreen: FC<PathScreenProps> = () => {
   return (
     <View>
       <Text>EmptyScreen</Text>

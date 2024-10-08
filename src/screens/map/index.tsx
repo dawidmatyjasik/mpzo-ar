@@ -1,12 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import { Image, StyleSheet } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import MapImage from "assets/png/step1-image.png";
 import MapList from "features/map/components/mapList";
+import { MapStackScreenProps } from "features/navigation/components/mapNavigation";
 
-const MapScreen = () => {
+type MapScreenProps = MapStackScreenProps<"MapScreen">;
+
+const MapScreen: FC<MapScreenProps> = () => {
   const styles = getStyles();
   return (
     <SafeAreaView style={styles.container} edges={["top", "right", "left"]}>
