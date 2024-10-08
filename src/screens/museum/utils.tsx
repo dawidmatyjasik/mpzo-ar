@@ -1,0 +1,9 @@
+import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
+
+import BackButton from "features/common/components/backButton";
+
+export const museumScreenOptions: NativeStackNavigationOptions = {
+  headerTitle: "O Muzeum",
+  headerLeft: () => <BackButton text="" />,
+  animation: "slide_from_right",
+};
