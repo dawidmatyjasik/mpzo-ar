@@ -1,0 +1,31 @@
+{
+  "welcome": {
+    "title": "Witaj w aplikacji",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "hint": "Jeśli jesteś osobą z dysfunkcjami, możesz skorzystać z ułatwień dostępnych w Twoim urządzeniu",
+    "next": "Dalej"
+  },
+  "intro": {
+    "step1": {
+      "title": "Czym jest ścieżka Superbohaterów?",
+      "description": "Ścieżka Superbohaterów to edukacyjno-rekreacyjna przestrzeń dla dzieci i młodzieży, która pozwala poznać historie młodych bohaterów z czasów II wojny światowej. Ścieżka zachęca do refleksji nad odwagą, empatią i wartością niesienia pomocy innym."
+    },
+    "step2": {
+      "title": "Jak działa aplikacja <highlight>{{AR}}</highlight>chitektura Pamięci?",
+      "description": "Ścieżka Superbohaterów to edukacyjno-rekreacyjna przestrzeń dla dzieci i młodzieży, która pozwala poznać historie młodych bohaterów z czasów II wojny światowej. Ścieżka zachęca do refleksji nad odwagą, empatią i wartością niesienia pomocy innym."
+    },
+    "step3": {
+      "title": "Jak uruchomić postacie na ścieżce pamięci?",
+      "description": "Aby uruchomić postać w 3D, wystarczy skierować kamerę telefonu na odpowiednią figurę. Wtedy na ekranie pojawi się jej trójwymiarowa wersja, którą można oglądać podczas słuchania jej historii."
+    },
+    "step4": {
+      "title": "Poruszaj się zgodnie z kierunkiem ścieżki!",
+      "description": "Zapewniamy najlepsze wrażenia wizualne, gdy korzystasz z aplikacji zgodnie z zaleceniami. Jakość doświadczeń może być różna, gdy nie poruszasz się zgodnie z kierunkiem ścieżki superbohaterów."
+    }
+  },
+  "bottomNavigation": {
+    "map": "Mapa",
+    "path": "Ścieżka",
+    "settings": "Ustawienia"
+  }
+}
