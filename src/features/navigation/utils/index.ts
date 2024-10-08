@@ -15,19 +15,3 @@ export const moveToBottomTab = CommonActions.reset({
     },
   ],
 });
-
-export const moveToScannerScreen = CommonActions.reset({
-  index: 0,
-  routes: [
-    {
-      name: "MainStack",
-      state: {
-        routes: [
-          {
-            name: "Scanner",
-          },
-        ],
-      },
-    },
-  ],
-});

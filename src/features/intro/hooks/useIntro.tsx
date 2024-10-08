@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import TrackPlayer from "react-native-track-player";
 
 import { slides } from "features/intro/consts";
-import { moveToBottomTab, moveToScannerScreen } from "features/navigation/utils";
+import { moveToBottomTab } from "features/navigation/utils";
 
 export const useIntro = () => {
   const slidesRef = useRef<FlatList>(null);
@@ -29,7 +29,7 @@ export const useIntro = () => {
     if (currentIndex !== undefined && slides && slidesRef?.current && isLastSlide) {
       slidesRef.current.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      navigation.dispatch(moveToScannerScreen);
+      navigation.dispatch(moveToBottomTab);
     }
   };
 
