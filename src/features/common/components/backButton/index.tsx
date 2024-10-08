@@ -27,7 +27,7 @@ const BackButton = ({ text, customGoBack }: BackButtonProps) => {
       onPress={customGoBack || goBack}
       style={styles.container}
       hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}>
-      <EntypoIcon name="chevron-left" size={24} color={colors.onSurface} />
+      <EntypoIcon name="chevron-left" size={25} color={colors.onSurface} />
       <Text variant="bodyLarge">{text}</Text>
     </TouchableOpacity>
   );
