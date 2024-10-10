@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useTranslation } from "react-i18next";
 import { List } from "react-native-paper";
 
 import { SettingsStackParamList } from "features/navigation/components/settingsNavigation";
@@ -17,9 +18,9 @@ interface SettingsListProps {
 }
 
 const SettingsList = ({ name, info, route }: SettingsListProps) => {
-  console.log(route);
   const { fonts } = useAppTheme();
   const styles = getStyles();
+  const { t } = useTranslation();
   const navigation = useNavigation<NativeStackNavigationProp<SettingsStackParamList>>();
 
   const handlePress = () => {
@@ -28,8 +29,8 @@ const SettingsList = ({ name, info, route }: SettingsListProps) => {
 
   return (
     <List.Item
-      title={name}
-      description={info}
+      title={t(name)}
+      description={t(info)}
       titleStyle={{ ...fonts.titleLarge }}
       contentStyle={styles.content}
       descriptionStyle={{ ...fonts.bodyMedium }}

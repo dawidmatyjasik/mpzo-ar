@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 
+import { useTranslation } from "react-i18next";
 import { Divider } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -10,8 +11,14 @@ import { SETTINGS_STRUCTURE } from "features/settings/consts";
 
 type SettingsScreenProps = SettingsStackScreenProps<"SettingsScreen">;
 
-const SettingsScreen: FC<SettingsScreenProps> = () => {
+const SettingsScreen: FC<SettingsScreenProps> = ({ navigation }) => {
   const styles = getStyles();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    navigation.setOptions({ headerTitle: t("settings.headerTitle") });
+  }, [navigation, t]);
+
   return (
     <SafeAreaView style={styles.container} edges={["right", "left"]}>
       <ScrollView>
@@ -30,7 +37,6 @@ const getStyles = () =>
   StyleSheet.create({
     container: {
       flex: 1,
-      height: "100%",
     },
     divider: {
       marginHorizontal: 20,
