@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
 import { Avatar, List } from "react-native-paper";
 import { MD3Colors } from "react-native-paper/lib/typescript/types";
 
@@ -16,13 +17,14 @@ interface MapListItemProps {
 const MapListItem = ({ name, description }: MapListItemProps) => {
   const { colors } = useAppTheme();
   const styles = getStyles(colors);
+  const { t } = useTranslation();
 
   const navigation = useNavigation<NavigationProp<MapStackParamList>>();
 
   return (
     <List.Item
-      title={name}
-      description={description}
+      title={t(name)}
+      description={t(description)}
       left={(props) => (
         <Avatar.Text label={name.charAt(0)} size={40} color="white" style={[props.style, styles.avatar]} />
       )}
