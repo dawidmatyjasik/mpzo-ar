@@ -2,18 +2,14 @@ import React from "react";
 import { View, StyleSheet, Dimensions, Image, Text as NativeText } from "react-native";
 
 import { Trans, useTranslation } from "react-i18next";
-import { Button, Text } from "react-native-paper";
+import { Text } from "react-native-paper";
 import { MD3Colors } from "react-native-paper/lib/typescript/types";
 
 import IntroPlayer from "features/intro/components/introPlayer";
 import { SlideProps } from "features/intro/types";
 import { useAppTheme } from "features/theme/hooks";
 
-interface StepProps extends Omit<SlideProps, "name"> {
-  handleSkip: () => void;
-}
-
-const Step = ({ description, image, title, mp3, handleSkip }: StepProps) => {
+const Step = ({ description, image, title, mp3 }: SlideProps) => {
   const { t } = useTranslation();
   const { colors } = useAppTheme();
   const styles = getStyles(colors);
@@ -21,15 +17,6 @@ const Step = ({ description, image, title, mp3, handleSkip }: StepProps) => {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={image} />
-        <Button
-          icon="chevron-right"
-          mode="text"
-          style={styles.skipButton}
-          contentStyle={styles.skipButtonContent}
-          textColor={colors.onPrimary}
-          onPress={handleSkip}>
-          Pomiń
-        </Button>
         <IntroPlayer mp3={mp3} />
       </View>
       <View style={styles.content}>

@@ -1,7 +1,7 @@
 {
   "welcome": {
     "title": "Witaj w aplikacji",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "description": "Witaj w aplikacji ARchitektura Pamięci. Odkryj historie niezwykłych dzieci i zobacz, jak ożywają na Ścieżce Superbohaterów.",
     "hint": "Jeśli jesteś osobą z dysfunkcjami, możesz skorzystać z ułatwień dostępnych w Twoim urządzeniu",
     "next": "Dalej"
   },
@@ -21,7 +21,8 @@
     "step4": {
       "title": "Poruszaj się zgodnie z kierunkiem ścieżki!",
       "description": "Zapewniamy najlepsze wrażenia wizualne, gdy korzystasz z aplikacji zgodnie z zaleceniami. Jakość doświadczeń może być różna, gdy nie poruszasz się zgodnie z kierunkiem ścieżki superbohaterów."
-    }
+    },
+    "skip": "Pomiń"
   },
   "bottomNavigation": {
     "map": "Mapa",
