@@ -4,7 +4,9 @@ import { type CompositeScreenProps, type NavigatorScreenParams } from "@react-na
 import { useTranslation } from "react-i18next";
 import { MD3Colors } from "react-native-paper/lib/typescript/types";
 import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { TABS_HEIGHT } from "features/common/consts";
 import { getNavigationOptions } from "features/navigation/components/bottomTabNavigation/utils";
 import MapNavigation, { MapStackParamList } from "features/navigation/components/mapNavigation";
 import { getMapScreenOptions } from "features/navigation/components/mapNavigation/utils";
@@ -33,8 +35,9 @@ const TabStack = createMaterialBottomTabNavigator<BottomTabParamList>();
 const BottomTabNavigation = () => {
   const { colors } = useAppTheme();
   const { t } = useTranslation();
+  const { bottom } = useSafeAreaInsets();
 
-  const styles = getStyles(colors);
+  const styles = getStyles(colors, bottom);
 
   const navigationOptions = getNavigationOptions();
   const mapScreenOptions = getMapScreenOptions(colors, t);
@@ -56,7 +59,7 @@ const BottomTabNavigation = () => {
   );
 };
 
-const getStyles = (colors: MD3Colors) =>
+const getStyles = (colors: MD3Colors, inset: number) =>
   StyleSheet.create({
     navigator: {
       backgroundColor: colors.secondary,
@@ -66,6 +69,7 @@ const getStyles = (colors: MD3Colors) =>
       borderTopWidth: 1,
       borderColor: "#e2e2e2", //TODO: update color
       backgroundColor: "white",
+      height: TABS_HEIGHT + inset,
     },
   });
 

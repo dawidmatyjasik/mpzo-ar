@@ -17,7 +17,7 @@ const WelcomeScreen: FC<WelcomeScreenProps> = ({ navigation }) => {
         <View style={styles.textContainer}>
           <Text variant="headlineLarge">{t("welcome.title")}</Text>
           <Text variant="bodyLarge" style={styles.textBody}>
-            {t("welcome.hint")}
+            {t("welcome.description")}
           </Text>
         </View>
       </View>

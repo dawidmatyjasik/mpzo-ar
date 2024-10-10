@@ -15,7 +15,7 @@ const HeroScreen: FC<HeroScreenProps> = ({ route }) => {
   return (
     <SafeAreaView style={styles.container} edges={["right", "left"]}>
       <ScrollView>
-        <Image source={MapImage} style={styles.mapImage as any} />
+        <Image source={MapImage} />
         <View style={styles.content}>
           <Text variant="headlineLarge">{name}</Text>
           <Text variant="bodyLarge">{description}</Text>
@@ -29,10 +29,6 @@ const getStyles = () =>
   StyleSheet.create({
     container: {
       flex: 1,
-      height: "100%",
-    },
-    mapImage: {
-      height: "60%",
     },
     content: {
       padding: 32,
