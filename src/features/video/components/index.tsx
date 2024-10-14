@@ -19,6 +19,7 @@ const HeroVideo = () => {
           ref={videoRef}
           resizeMode="cover"
           fullscreen={true}
+          paused
         />
       </View>
     </View>

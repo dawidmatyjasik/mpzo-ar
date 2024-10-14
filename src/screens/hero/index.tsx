@@ -33,7 +33,6 @@ const HeroScreen: FC<HeroScreenProps> = ({ route }) => {
         <View style={styles.content}>
           <Text variant="headlineLarge">{t(name)}</Text>
           <Text variant="bodyLarge">{t(description)}</Text>
-          <Text variant="bodyLarge">{t(description)}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
