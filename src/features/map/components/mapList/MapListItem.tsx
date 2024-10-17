@@ -26,7 +26,12 @@ const MapListItem = ({ name, description }: MapListItemProps) => {
       title={t(name)}
       description={t(description)}
       left={(props) => (
-        <Avatar.Text label={name.charAt(0)} size={40} color="white" style={[props.style, styles.avatar]} />
+        <Avatar.Text
+          label={name.charAt(0).toLocaleUpperCase()}
+          size={40}
+          color="white"
+          style={[props.style, styles.avatar]}
+        />
       )}
       right={(props) => <List.Icon {...props} icon="chevron-right" />}
       descriptionNumberOfLines={1}

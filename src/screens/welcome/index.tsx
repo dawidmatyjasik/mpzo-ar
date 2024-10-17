@@ -2,9 +2,10 @@ import React, { FC } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { useTranslation } from "react-i18next";
-import { Button, Text } from "react-native-paper";
+import { Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import CustomButton from "components/customButton";
 import { IntroStackScreenProps } from "features/navigation/components/introNavigation";
 
 type WelcomeScreenProps = IntroStackScreenProps<"WelcomeScreen">;
@@ -25,9 +26,9 @@ const WelcomeScreen: FC<WelcomeScreenProps> = ({ navigation }) => {
       <Text variant="bodySmall" style={styles.textInfo}>
         {t("welcome.hint")}
       </Text>
-      <Button mode="contained" onPress={() => navigation.push("IntroScreen")}>
+      <CustomButton mode="contained" onPress={() => navigation.push("IntroScreen")}>
         {t("welcome.next")}
-      </Button>
+      </CustomButton>
     </SafeAreaView>
   );
 };
