@@ -46,7 +46,7 @@ const BottomTabNavigation = () => {
 
   return (
     <TabStack.Navigator
-      initialRouteName="SettingsNavigation"
+      initialRouteName="MapNavigation"
       inactiveColor={colors.onSurface}
       activeColor={colors.secondary}
       screenOptions={navigationOptions}

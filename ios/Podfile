@@ -5,6 +5,9 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
+use_modular_headers!  # Add this line here
+
+
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
@@ -27,6 +30,8 @@ end
 
 target 'ViroStarterKit' do
   config = use_native_modules!
+
+  $RNVideoUseVideoCaching = true
 
   use_react_native!(
     :path => config[:reactNativePath],

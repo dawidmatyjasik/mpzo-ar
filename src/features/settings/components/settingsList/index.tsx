@@ -24,7 +24,7 @@ const SettingsList = ({ name, info, route }: SettingsListProps) => {
   const navigation = useNavigation<NativeStackNavigationProp<SettingsStackParamList>>();
 
   const handlePress = () => {
-    navigation.push(route);
+    navigation.push(route, { title: t(name) });
   };
 
   return (

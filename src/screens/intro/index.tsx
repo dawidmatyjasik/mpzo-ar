@@ -4,9 +4,9 @@ import type { ListRenderItem } from "react-native";
 import { Animated, FlatList, StyleSheet } from "react-native";
 
 import { useTranslation } from "react-i18next";
-import { Button } from "react-native-paper";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
+import CustomButton from "components/customButton";
 import Intro from "features/intro/components/intro";
 import IntroActions from "features/intro/components/introActions";
 import IntroPagination from "features/intro/components/introPagination";
@@ -38,7 +38,7 @@ const IntroScreen: FC<IntroProps> = () => {
 
   return (
     <SafeAreaView style={styles.introContainer}>
-      <Button
+      <CustomButton
         icon="chevron-right"
         mode="text"
         style={styles.skipButton}
@@ -46,7 +46,7 @@ const IntroScreen: FC<IntroProps> = () => {
         textColor={colors.onPrimary}
         onPress={handleSkip}>
         {t("intro.skip")}
-      </Button>
+      </CustomButton>
       <FlatList
         data={slides}
         renderItem={renderItem}

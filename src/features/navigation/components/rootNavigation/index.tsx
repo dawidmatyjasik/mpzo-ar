@@ -17,7 +17,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const RootNavigation = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator initialRouteName="BottonTabNavigation" screenOptions={rootStackNavigatorOptions}>
+      <RootStack.Navigator initialRouteName="IntroNavigation" screenOptions={rootStackNavigatorOptions}>
         <RootStack.Screen name="IntroNavigation" component={IntroNavigation} />
         <RootStack.Screen name="BottonTabNavigation" component={BottomTabNavigation} />
       </RootStack.Navigator>

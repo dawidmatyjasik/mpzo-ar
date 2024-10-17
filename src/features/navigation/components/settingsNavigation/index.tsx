@@ -15,11 +15,15 @@ import { settingsScreenOptions } from "screens/settings/utils";
 import type { CompositeScreenProps } from "@react-navigation/native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
+interface SubSettingsItem {
+  title: string;
+}
+
 export type SettingsStackParamList = {
   SettingsScreen: undefined;
-  AboutScreen: undefined;
-  MuseumScreen: undefined;
-  PolicyScreen: undefined;
+  AboutScreen: SubSettingsItem;
+  MuseumScreen: SubSettingsItem;
+  PolicyScreen: SubSettingsItem;
 };
 
 export type SettingsStackScreenProps<T extends keyof SettingsStackParamList> = CompositeScreenProps<

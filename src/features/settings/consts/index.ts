@@ -19,10 +19,4 @@ export const SETTINGS_STRUCTURE: SettingsStructure[] = [
     description: "policy.description",
     route: "PolicyScreen",
   },
-  {
-    name: "restart.title",
-    info: "restart.info",
-    description: "restart.description",
-    route: "AboutScreen",
-  },
 ];

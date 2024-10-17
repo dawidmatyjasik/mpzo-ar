@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 
-import { Button } from "react-native-paper";
+import CustomButton from "components/customButton";
 
 interface IntroActionsProps {
   handleNext: () => void;
@@ -14,13 +14,13 @@ const IntroActions = ({ isFirst, handleNext, handleBack }: IntroActionsProps) =>
   return (
     <View style={styles.actions}>
       {!isFirst && (
-        <Button mode="outlined" onPress={handleBack} style={styles.button}>
+        <CustomButton mode="outlined" onPress={handleBack} style={styles.button}>
           Wstecz
-        </Button>
+        </CustomButton>
       )}
-      <Button mode="contained" onPress={handleNext} style={styles.button}>
+      <CustomButton mode="contained" onPress={handleNext} style={styles.button}>
         Dalej
-      </Button>
+      </CustomButton>
     </View>
   );
 };
