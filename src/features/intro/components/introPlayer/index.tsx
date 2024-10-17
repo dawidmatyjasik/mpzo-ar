@@ -27,11 +27,11 @@ const IntroPlayer = ({ mp3 }: IntroPlayerProps) => {
       hitSlop={10}
       disabled={!isPaused && !isReady}>
       <View style={styles.playerWrapper}>
-        {isPaused && <IoniconsPlay name="pause" size={28} color={colors.primary} style={styles.playerIcon} />}
+        {isPaused && <IoniconsPlay name="pause" size={28} color={colors.secondary} style={styles.playerIcon} />}
 
-        {isReady && <IoniconsPlay name="play" size={28} color={colors.primary} style={styles.playerIcon} />}
+        {isReady && <IoniconsPlay name="play" size={28} color={colors.secondary} style={styles.playerIcon} />}
 
-        {!isPaused && !isReady && <ActivityIndicator color={colors.primary} style={styles.playerIcon} />}
+        {!isPaused && !isReady && <ActivityIndicator color={colors.secondary} style={styles.playerIcon} />}
       </View>
     </TouchableOpacity>
   );

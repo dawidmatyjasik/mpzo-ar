@@ -2,9 +2,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Animated } from "react-native";
 import type { FlatList, ViewToken } from "react-native";
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import TrackPlayer from "react-native-track-player";
 
+import { StorageType } from "features/common/types/storage";
 import { slides } from "features/intro/consts";
 import { moveToBottomTab } from "features/navigation/utils";
 
@@ -20,16 +22,28 @@ export const useIntro = () => {
 
   const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
-  const handleSkip = useCallback(() => {
-    navigation.dispatch(moveToBottomTab);
+  const handleSkip = useCallback(async () => {
+    try {
+      await AsyncStorage.setItem(StorageType.WasViewed, "true");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      navigation.dispatch(moveToBottomTab);
+    }
   }, [navigation]);
 
-  const handleNext = () => {
+  const handleNext = async () => {
     const isLastSlide = currentIndex < slides.length - 1;
     if (currentIndex !== undefined && slides && slidesRef?.current && isLastSlide) {
       slidesRef.current.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      navigation.dispatch(moveToBottomTab);
+      try {
+        await AsyncStorage.setItem(StorageType.WasViewed, "true");
+      } catch (error) {
+        console.error(error);
+      } finally {
+        navigation.dispatch(moveToBottomTab);
+      }
     }
   };
 

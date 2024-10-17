@@ -34,8 +34,6 @@ const IntroScreen: FC<IntroProps> = () => {
     return <Intro name={name} description={description} image={image} title={title} mp3={mp3} />;
   }, []);
 
-  console.log(top);
-
   return (
     <SafeAreaView style={styles.introContainer}>
       <CustomButton
