@@ -23,7 +23,7 @@ const RestartModal = ({ isVisible, setIsVisible }: RestartModalProps) => {
     try {
       await AsyncStorage.removeItem(StorageType.WasViewed);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       navigation.dispatch(moveToIntro);
     }

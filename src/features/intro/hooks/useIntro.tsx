@@ -26,7 +26,7 @@ export const useIntro = () => {
     try {
       await AsyncStorage.setItem(StorageType.WasViewed, "true");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       navigation.dispatch(moveToBottomTab);
     }
@@ -40,7 +40,7 @@ export const useIntro = () => {
       try {
         await AsyncStorage.setItem(StorageType.WasViewed, "true");
       } catch (error) {
-        console.log(error);
+        console.error(error);
       } finally {
         navigation.dispatch(moveToBottomTab);
       }

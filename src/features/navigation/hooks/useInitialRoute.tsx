@@ -14,7 +14,7 @@ const useInitialRoute = () => {
       const wasViewed = await AsyncStorage.getItem(StorageType.WasViewed);
       setInitialRouteName(wasViewed ? "BottonTabNavigation" : "IntroNavigation");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setIsNavigationLoaded(true);
     }
