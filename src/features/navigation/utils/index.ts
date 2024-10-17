@@ -15,3 +15,19 @@ export const moveToBottomTab = CommonActions.reset({
     },
   ],
 });
+
+export const moveToIntro = CommonActions.reset({
+  index: 0,
+  routes: [
+    {
+      name: "IntroNavigation",
+      state: {
+        routes: [
+          {
+            name: "WelcomeScreen",
+          },
+        ],
+      },
+    },
+  ],
+});
